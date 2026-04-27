@@ -188,3 +188,116 @@ Query:  sumarize this documents
 Create your own LLM from scratch
 Fine tuning
 AI apps: App, chatbot, agentic WF
+
+Temperature -> 0 - 1
+0 -> Deterministic
+
+Nov-2022 -> ChatGpt -> GPT 1.0
+June/July 2022.
+Gpt 1.0 was trained on data till March-2022.
+Who won the last FIFA WC?
+FIFA WC 2018.
+Who won the 2022 FIFA WC
+-> Either again given you info about 2018 WC
+-> Hallucination.
+-> I don't know
+
+Apr-2026
+What happened in yesterday's IPL match?
+-> It is not there in it's data!!!
+1) Do i have the data?
+2) Yes, give answer based on that
+3) If not, search the web and answer
+
+ReAct (Reason + Act) Prompting:
+===============================
+Somewhat similar to CoT Promopting:
+Is more applicable Agentic AI / Agentic Workflow
+- we create apps that are Workflows using AI Agents
+---- SYSTEM PROMPT to the agentic wf:
+You are an expert {role}
+Give your analysis based on the context provided by the user.
+Use these tools to give your analysis:
+1) fetch
+2) analyze
+3) reason
+4) summarize
+5) generate
+
+Context: {context}
+User query: {query}
+---
+
+The "tools" code (methods) in our WF app that will be called by the LLM internally.
+fetch: API calls / DB / read files
+
+Local Python Virtual Environment:
+python -m venv .venv
+source ./.venv/bin/activate
+
+CTRL+SHIFT+P
+
+AZURE_OPENAI_API_KEY="<your-AZURE_OPENAI_API_KEY>"
+AZURE_OPENAI_ENDPOINT="<your-AZURE_OPENAI_ENDPOINT>"
+AZURE_OPENAI_DEPLOYMENT=gpt-4o-mini
+AZURE_OPENAI_API_VERSION=2024-02-15-preview
+AZURE_OPENAI_EMBEDDING_DEPLOYMENT=text-embedding-3-small
+
+SYSTEM: define the beahvior of the model
+USER: user query
+ASSISTANT/AI: response from the model/LLM.
+
+Dictionary: key-value pairs
+{
+	"key": "value",
+	"key2": "value 2",
+	"key3": "value 3"
+	:
+}
+JSON string:
+
+"" -> strings
+'' -> a single character / strings
+
+Multi-line string in Python:
+"""
+
+
+"""
+Python: [] -> List / collection / array
+Collection of key-value pairs (dictonary)
+scenarios = [
+    {
+        "role": "Support Executive",
+        "issue": "Delayed delivery",
+        "tone": "Apologetic",
+        "resolution": "10% discount"
+    },
+    {
+        "role": "Premium Support Manager",
+        "issue": "Product defect",
+        "tone": "Highly empathetic",
+        "resolution": "Full refund + replacement"
+    }
+]
+
+gpt-4o-mini -> Generic model -> "assitant".
+
+HexCopilot:
+- Generic LLM that can be used by all departments/BU
+- Before starting the UI/app, 1 one time setup for the BU is to be done
+- specify the BU-based on BU, the system role can be assigned/prompt library etc. to be used
+
+OOP
+
+langchain and langgraph
+- Generic wrapper - can be used with any model.
+
+Analysis 	gpt-4.2
+summary		gpt-4.2
+
+Refine it further - critique/critic -> gpt5.5
+- greater reasoning power.
+
+Code generation/execution
+- claude sonnet
